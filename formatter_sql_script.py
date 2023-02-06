@@ -1,12 +1,31 @@
 from datetime import datetime
 
-def generar_script(data: str, table: str, fields: str):
+__author__ = 'Felipe Medel'
+__credits__ = 'Felipe Medel'
+
+
+"""
+TODO: Queda pendiente mejorar el documento, crear una clase
+      darle un order a los métodos, ajustar las posibles combinaciones
+      para poder implementar el CRUD.
+
+POSIBLE MEJORA: implementar un creador de script para la creación de 
+                base de datos, tablas, agregar o modificar campos,
+                triggers, procedimientos almacenados, vistas y demás.
+
+MEJORA LEJANA:  Implementar la generación del MER.
+"""
+
+def generar_script(data: str, table: str, fields: str, divider: str, action: str):
+    # TODO: Pendiente por implementar
+    if action == 'update':
+        return generate_script_update(fields=fields, data=data)
 
     script = f'insert into {table} \n'
-    script += '(' + fields.replace('	', ', ') + ')\n'
+    script += '(' + fields.replace(divider, ', ') + ')\n'
     script += 'VALUES \n'
     data = data.replace(',', '')
-    data = data.replace('	', ', ')
+    data = data.replace(divider, ', ')
     lines = data.split('\n')
     
     result = ''
@@ -34,6 +53,10 @@ def generar_script(data: str, table: str, fields: str):
     script += result + ';'
 
     return script
+
+
+def generate_script_update(fields: str, data: str):
+    return True
 
 
 def validate_date(_date: str):
