@@ -4,8 +4,8 @@ readme = open('./README.md', 'r')
 
 setup(
     name='formatter_sql_script',
-    version='0.2',
-    description='Formateador de texto a sentencia insert de SQL',
+    version='1.0',
+    description='Formateador de texto a sentencia de SQL (Insert y Update)',
     long_description=readme.read(),
     long_description_content_type='text/markdown',
     author='Felipe Medel',
