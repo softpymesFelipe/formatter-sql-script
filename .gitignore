@@ -1,3 +1,5 @@
 dist
 build
 formatter_sql_script.egg-info
+__pycache__/
+testing.py

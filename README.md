@@ -41,7 +41,7 @@ si queremos formatear a un script insert debemos enviar la información de la si
 
 ```py
 # importación del paquete
-from formatter_sql_script import generar_script
+from formatter_sql_script import GenerateScript
 
 # asignamos la data copiada de nuestra tabla en una variable entre """ (3) comillas dobles para conservar el formato  
 data = """1   prueba  testing 1
