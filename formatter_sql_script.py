@@ -3,6 +3,15 @@ from datetime import datetime
 class GenerateScript:
     
     def __init__(self, table: str, fields: str, data: str, _type: int = 0, where: str = 'TRUE') -> None:
+        """_summary_
+
+        Args:
+            table (str): nombre de la tabla
+            fields (str): nombre de las columnas
+            data (str): información o registros
+            _type (int, optional): Tipo de operación (0=Insert/1=Update). Por defecto es 0.
+            where (str, optional): clausula WHERE. Por defecto es 'TRUE'.
+        """
         self.__table = table
         self.__fields = fields
         self.__data = data
@@ -15,7 +24,7 @@ class GenerateScript:
         elif self.__type == 1:
             return self. __generate_sql_update()
         
-        return 'El tipo ingresado no corresponde a ninguna operación disponible. valores permitidos (0=Insert/1=Update)'
+        return 'El TIPO ingresado no corresponde a ninguna operación disponible. valores permitidos (0=Insert/1=Update)'
         
 
     def __generate_sql_insert(self):
